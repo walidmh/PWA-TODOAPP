@@ -30,6 +30,7 @@ const database = await openDB('app-store', 1,{
 if(navigator.onLine){
     await database.put('list', json, 'list');
     var button = document.querySelector("#addBtn");
+    console.log(button)
     button.addEventListener("click", function(e){
         json.push({content:document.querySelector("#item").value, done:false});
         fetch('data/db.json', {
